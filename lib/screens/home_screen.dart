@@ -21,26 +21,28 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
   void initState() {
     // TODO: implement initState
     super.initState();
-    WidgetsBinding.instance.addObserver(this); //To intilize widget binding observer
+    WidgetsBinding.instance
+        .addObserver(this); //To intilize widget binding observer
     setStatus("online");
   }
 
   void setStatus(String status) async {
-    await FirebaseFirestore.instance.collection('users').doc(widget.user.uid).update({'status': status});
+    await FirebaseFirestore.instance
+        .collection('users')
+        .doc(widget.user.uid)
+        .update({'status': status});
   }
 
   @override
   void didChangeAppLifecycleState(AppLifecycleState state) {
-    if (state ==
-        AppLifecycleState
-            .resumed) //resumed means background theke abar open hoile online dekaibo
+    if (state == AppLifecycleState.resumed) //resumed means background theke abar open hoile online dekaibo
     {
       setStatus(
         'online',
       ); //online
     } else {
       //offline
-      setStatus('offline');
+      setStatus('Offline');
     }
   }
 
@@ -57,10 +59,7 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
                 await GoogleSignIn()
                     .signOut(); //without it we can't use diffrent account all the time i have to use same account
                 await FirebaseAuth.instance.signOut();
-                Navigator.pushAndRemoveUntil(
-                    context,
-                    MaterialPageRoute(builder: (context) => AuthScreen()),
-                    (route) => false);
+                Navigator.pushAndRemoveUntil(context,MaterialPageRoute(builder: (context) => AuthScreen()),(route) => false);
               },
               icon: Icon(Icons.logout))
         ],
@@ -75,9 +74,7 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
           if (snapshot.hasData) {
             if (snapshot.data.docs.length < 1) //null
             {
-              return Center(
-                child: Text("No Chats Available"),
-              );
+              return Center(child: Text("No Chats Available"),);
             }
             return ListView.builder(
                 itemCount: snapshot.data.docs.length,

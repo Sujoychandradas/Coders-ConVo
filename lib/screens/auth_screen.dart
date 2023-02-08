@@ -86,7 +86,7 @@ class _AuthScreenState extends State<AuthScreen> {
                     "https://developers.google.com/static/identity/images/g-logo.png",
                     height: 36,
                   ),
-                  SizedBox(
+                  const SizedBox(
                     width: 10,
                   ),
                   Text(

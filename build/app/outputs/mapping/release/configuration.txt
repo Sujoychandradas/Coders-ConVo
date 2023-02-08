@@ -293,12 +293,12 @@
 }
 
 # End of content from C:\Users\Sujoy\.gradle\caches\transforms-3\2d1faab41139ac1f9f0ad5a69aa05fe9\transformed\jetified-play-services-auth-base-18.0.4\proguard.txt
-# The proguard configuration file for the following section is C:\Users\Sujoy\.gradle\caches\transforms-3\9c566292b4088baff7c6158b05d6f239\transformed\jetified-play-services-fido-19.0.0\proguard.txt
+# The proguard configuration file for the following section is C:\Users\Sujoy\.gradle\caches\transforms-3\f8f9640b68f57571cf61c9b96af70c02\transformed\jetified-play-services-fido-19.0.1\proguard.txt
 # Methods enable and disable in this class are complained as unresolved
 # references, but they are system APIs and are not used by Fido client apps.
 -dontwarn android.nfc.NfcAdapter
 
-# End of content from C:\Users\Sujoy\.gradle\caches\transforms-3\9c566292b4088baff7c6158b05d6f239\transformed\jetified-play-services-fido-19.0.0\proguard.txt
+# End of content from C:\Users\Sujoy\.gradle\caches\transforms-3\f8f9640b68f57571cf61c9b96af70c02\transformed\jetified-play-services-fido-19.0.1\proguard.txt
 # The proguard configuration file for the following section is C:\Users\Sujoy\.gradle\caches\transforms-3\3ff720be07735976176520d1c05fb799\transformed\jetified-play-services-base-18.0.1\proguard.txt
 # b/35135904 Ensure that proguard will not strip the mResultGuardian.
 -keepclassmembers class com.google.android.gms.common.api.internal.BasePendingResult {

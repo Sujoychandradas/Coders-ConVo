@@ -745,10 +745,10 @@ library {
   maven_library {
     groupId: "io.flutter"
     artifactId: "flutter_embedding_release"
-    version: "1.0.0-8f2221fbef28b478debb78dd233f5250b220ca99"
+    version: "1.0.0-b24591ed328a2d4ce6505819e2f5898a78132f7f"
   }
   digests {
-    sha256: "\300BK+\353i\221l\324\357\222\254\211\205\223\231PZ\034{f.\315\360\347+\300\0233G\353d"
+    sha256: "\344\352-q\354\264\016\377\a>\003\372G\203\006Cw\236\300Q`X]d7\303\254\201\212\261HK"
   }
   repo_index {
     value: 2
@@ -868,10 +868,10 @@ library {
   maven_library {
     groupId: "com.google.android.gms"
     artifactId: "play-services-auth"
-    version: "20.4.0"
+    version: "20.4.1"
   }
   digests {
-    sha256: "\231;)\003AI\270\374\306\021\020e\243\356\355\215\316\362\373\025\243\n\237v[\3059\362O\236\313\272"
+    sha256: "!\027\253\t\262\222\030\236\220\316\300>\371\271\227\r\3649f\nl\032\211\367\030(\364H;\260\320H"
   }
   repo_index {
   }
@@ -892,10 +892,10 @@ library {
   maven_library {
     groupId: "com.google.android.gms"
     artifactId: "play-services-fido"
-    version: "19.0.0"
+    version: "19.0.1"
   }
   digests {
-    sha256: "]\252mT\375\037k\202)\370\205}z\347\253T\207u\346\212-P\232\343d\2609\375\335\325,\350"
+    sha256: ">\022\312TyV\n\321\330\242\304\315\263bZ\r\0172\254\270\272\"/\234\360\327Q\274n\225>\273"
   }
   repo_index {
   }
@@ -904,10 +904,10 @@ library {
   maven_library {
     groupId: "io.flutter"
     artifactId: "armeabi_v7a_release"
-    version: "1.0.0-8f2221fbef28b478debb78dd233f5250b220ca99"
+    version: "1.0.0-b24591ed328a2d4ce6505819e2f5898a78132f7f"
   }
   digests {
-    sha256: "9\337/.Y\315\376?\214(\320\003v\234|K\337\202\376\a\340\354k\272\201\266O!}\2143$"
+    sha256: "p\357\2679[\252\312\261\005\366\322w\235\246\254\364\314xku[r\020\306\370n=y\004\273\235\372"
   }
   repo_index {
     value: 2
@@ -917,10 +917,10 @@ library {
   maven_library {
     groupId: "io.flutter"
     artifactId: "arm64_v8a_release"
-    version: "1.0.0-8f2221fbef28b478debb78dd233f5250b220ca99"
+    version: "1.0.0-b24591ed328a2d4ce6505819e2f5898a78132f7f"
   }
   digests {
-    sha256: "\212G\001\355\214\242N\235\265\316\240{\325=|\'\'\326\215s\335y\"\242\320Q\355\207\242\004\235_"
+    sha256: "\230T9\245q\031\tfm\2712\343\2739\b\276\244{\215z%S\2064\240\260\2369\251z\373\221"
   }
   repo_index {
     value: 2
@@ -930,10 +930,10 @@ library {
   maven_library {
     groupId: "io.flutter"
     artifactId: "x86_64_release"
-    version: "1.0.0-8f2221fbef28b478debb78dd233f5250b220ca99"
+    version: "1.0.0-b24591ed328a2d4ce6505819e2f5898a78132f7f"
   }
   digests {
-    sha256: "\021\305\302\023\357\211\330K\330z\224g\375t$v!\220\344y*\314W\344\345\227\274\316\337\265\017\262"
+    sha256: "\035\005B`\377\nI\017\372E\250\351\332\335\370\365\225^\b8\346\221\377\036\365\006[0n\363Z\202"
   }
   repo_index {
     value: 2
@@ -941,7 +941,7 @@ library {
 }
 library {
   digests {
-    sha256: "Z\342C\033\335\234\201\264-q\265\342fu\237\033\275\304\200Y\006\032\025\026N<\3173\234V\230-"
+    sha256: "n\313\266\234\315m\240\335\234\204\b%/1\344sN\305OJ\266\240\222t\000\242\313\n|\265\364\034"
   }
 }
 library_dependencies {

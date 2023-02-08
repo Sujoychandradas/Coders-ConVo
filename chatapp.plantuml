@@ -1,0 +1,121 @@
+@startuml
+set namespaceSeparator ::
+
+class "coders_combo_chatapp::firebase_options.dart::DefaultFirebaseOptions" {
+  {static} +FirebaseOptions web
+  {static} +FirebaseOptions android
+  {static} +FirebaseOptions ios
+  {static} +FirebaseOptions macos
+  {static} +FirebaseOptions currentPlatform
+}
+
+"coders_combo_chatapp::firebase_options.dart::DefaultFirebaseOptions" o-- "firebase_core_platform_interface::firebase_core_platform_interface.dart::FirebaseOptions"
+
+class "coders_combo_chatapp::main.dart::MyApp" {
+  +Future<Widget> UserSignedIn()
+  +Widget build()
+}
+
+"flutter::src::widgets::framework.dart::StatelessWidget" <|-- "coders_combo_chatapp::main.dart::MyApp"
+
+class "coders_combo_chatapp::model::user_model.dart::UserModel" {
+  +String email
+  +String name
+  +String Image
+  +Timestamp data
+  +String uid
+}
+
+"coders_combo_chatapp::model::user_model.dart::UserModel" o-- "cloud_firestore_platform_interface::src::timestamp.dart::Timestamp"
+
+class "coders_combo_chatapp::screens::auth_screen.dart::AuthScreen" {
+  +_AuthScreenState createState()
+}
+
+"flutter::src::widgets::framework.dart::StatefulWidget" <|-- "coders_combo_chatapp::screens::auth_screen.dart::AuthScreen"
+
+class "coders_combo_chatapp::screens::auth_screen.dart::_AuthScreenState" {
+  +GoogleSignIn googleSignIn
+  +FirebaseFirestore firestore
+  +Future<dynamic> signInFunction()
+  +Widget build()
+}
+
+"coders_combo_chatapp::screens::auth_screen.dart::_AuthScreenState" o-- "google_sign_in::google_sign_in.dart::GoogleSignIn"
+"coders_combo_chatapp::screens::auth_screen.dart::_AuthScreenState" o-- "cloud_firestore::cloud_firestore.dart::FirebaseFirestore"
+"flutter::src::widgets::framework.dart::State" <|-- "coders_combo_chatapp::screens::auth_screen.dart::_AuthScreenState"
+
+class "coders_combo_chatapp::screens::chat_screen.dart::ChatScreen" {
+  +UserModel currentUser
+  +String friendId
+  +String friendName
+  +String friendImage
+  +Widget build()
+}
+
+"coders_combo_chatapp::screens::chat_screen.dart::ChatScreen" o-- "coders_combo_chatapp::model::user_model.dart::UserModel"
+"flutter::src::widgets::framework.dart::StatelessWidget" <|-- "coders_combo_chatapp::screens::chat_screen.dart::ChatScreen"
+
+class "coders_combo_chatapp::screens::home_screen.dart::HomeScreen" {
+  +UserModel user
+  +State<HomeScreen> createState()
+}
+
+"coders_combo_chatapp::screens::home_screen.dart::HomeScreen" o-- "coders_combo_chatapp::model::user_model.dart::UserModel"
+"flutter::src::widgets::framework.dart::StatefulWidget" <|-- "coders_combo_chatapp::screens::home_screen.dart::HomeScreen"
+
+class "coders_combo_chatapp::screens::home_screen.dart::_HomeScreenState" {
+  +void initState()
+  +void setStatus()
+  +void didChangeAppLifecycleState()
+  +Widget build()
+}
+
+"flutter::src::widgets::framework.dart::State" <|-- "coders_combo_chatapp::screens::home_screen.dart::_HomeScreenState"
+"flutter::src::widgets::binding.dart::WidgetsBindingObserver" <|-- "coders_combo_chatapp::screens::home_screen.dart::_HomeScreenState"
+
+class "coders_combo_chatapp::screens::search_screen.dart::SearchScreen" {
+  +UserModel user
+  +State<SearchScreen> createState()
+}
+
+"coders_combo_chatapp::screens::search_screen.dart::SearchScreen" o-- "coders_combo_chatapp::model::user_model.dart::UserModel"
+"flutter::src::widgets::framework.dart::StatefulWidget" <|-- "coders_combo_chatapp::screens::search_screen.dart::SearchScreen"
+
+class "coders_combo_chatapp::screens::search_screen.dart::_SearchScreenState" {
+  +TextEditingController searchController
+  +List<Map<dynamic, dynamic>> searchResult
+  +bool isloading
+  +void onSearch()
+  +Widget build()
+}
+
+"coders_combo_chatapp::screens::search_screen.dart::_SearchScreenState" o-- "flutter::src::widgets::editable_text.dart::TextEditingController"
+"flutter::src::widgets::framework.dart::State" <|-- "coders_combo_chatapp::screens::search_screen.dart::_SearchScreenState"
+
+class "coders_combo_chatapp::widgets::massage_textfield.dart::MassageTextField" {
+  +String currentId
+  +String friendId
+  +State<MassageTextField> createState()
+}
+
+"flutter::src::widgets::framework.dart::StatefulWidget" <|-- "coders_combo_chatapp::widgets::massage_textfield.dart::MassageTextField"
+
+class "coders_combo_chatapp::widgets::massage_textfield.dart::_MassageTextFieldState" {
+  -TextEditingController _controller
+  +Widget build()
+}
+
+"coders_combo_chatapp::widgets::massage_textfield.dart::_MassageTextFieldState" o-- "flutter::src::widgets::editable_text.dart::TextEditingController"     
+"flutter::src::widgets::framework.dart::State" <|-- "coders_combo_chatapp::widgets::massage_textfield.dart::_MassageTextFieldState"
+
+class "coders_combo_chatapp::widgets::single_message.dart::SingleMessage" {
+  +String message
+  +bool isMe
+  +Widget build()
+}
+
+"flutter::src::widgets::framework.dart::StatelessWidget" <|-- "coders_combo_chatapp::widgets::single_message.dart::SingleMessage"
+
+
+@enduml

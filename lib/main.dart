@@ -10,9 +10,7 @@ import 'firebase_options.dart';
 void main() async {
   WidgetsFlutterBinding
       .ensureInitialized(); //after creating the flutter projcet
-  await Firebase.initializeApp(
-    options: DefaultFirebaseOptions
-        .currentPlatform, //For the first error PlatformException (PlatformException(null-error, Host platform returned null value for non-null return value., null, null))
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform, //For the first error PlatformException (PlatformException(null-error, Host platform returned null value for non-null return value., null, null))
   );
   runApp(MyApp());
 }
@@ -22,22 +20,17 @@ class MyApp extends StatelessWidget {
 
 //This mehtod is used for checking if the user singed out or not
 //If the user is not signed out still can asscess the app
-  Future<Widget> UserSignedIn() async {
-    User? user = FirebaseAuth.instance.currentUser;
-    if (user != null) {
-      DocumentSnapshot userData = await FirebaseFirestore.instance
-          .collection('users')
-          .doc(user.uid)
-          .get();
+  Future<Widget> UserSignedIn() async {User? user = FirebaseAuth.instance.currentUser;
 
-      UserModel userModel =
-          UserModel.fromJson(userData); //sending data in user Model
+    if (user != null) { DocumentSnapshot userData = await FirebaseFirestore.instance.collection('users').doc(user.uid).get();
+      UserModel userModel = UserModel.fromJson(userData); //sending data in user Model
       return HomeScreen(userModel);
-    } else {
-      return AuthScreen();
+    } else 
+    {
+      return const AuthScreen();
     }
   }
-
+  
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -52,10 +45,7 @@ class MyApp extends StatelessWidget {
             if (snapshot.hasData) {
               return snapshot.data!; //it simply means return the widget
             }
-            return Scaffold(
-              body: Center(
-                child: CircularProgressIndicator(),
-              ),
+            return Scaffold(body: Center(child: CircularProgressIndicator(), ),
             );
           } ),
       debugShowCheckedModeBanner: false,

@@ -17,10 +17,12 @@ class ChatScreen extends StatelessWidget {
   final String friendImage;
 
   ChatScreen(
-      {required this.currentUser,
-      required this.friendId,
-      required this.friendName,
-      required this.friendImage});
+      {
+          required this.currentUser,
+          required this.friendId,
+          required this.friendName,
+          required this.friendImage
+      });
 
   @override
   Widget build(BuildContext context) {
@@ -44,12 +46,8 @@ class ChatScreen extends StatelessWidget {
         //     Text(friendName, style: TextStyle(fontSize: 20))
         //   ],
         // ),
-
         title: StreamBuilder<DocumentSnapshot>(
-            stream: FirebaseFirestore.instance
-                .collection('users')
-                .doc(friendId)
-                .snapshots(),
+            stream: FirebaseFirestore.instance.collection('users').doc(friendId).snapshots(),
             builder: (context, snapshot) {
               if (snapshot.data != null) {
                 return Row(
@@ -58,25 +56,18 @@ class ChatScreen extends StatelessWidget {
                       borderRadius: BorderRadius.circular(88),
                       child: CachedNetworkImage(
                         imageUrl: friendImage,
-                        placeholder: ((context, url) =>
-                            CircularProgressIndicator()),
-                        errorWidget: ((context, url, error) =>
-                            Icon(Icons.error)),
+                        placeholder: ((context, url) => CircularProgressIndicator()),
+                        errorWidget: ((context, url, error) => Icon(Icons.error)),
                         height: 40,
                       ),
                     ),
-                    SizedBox(
-                      width: 5,
-                    ),
-                    Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
+                    SizedBox(width: 5,),
+                    Column(mainAxisAlignment: MainAxisAlignment.center,
+                    children:
+                     [
                         Text(friendName, style: TextStyle(fontSize: 20)),
                         Text(snapshot.data!['status'],
-                            style: TextStyle(fontSize: 15)),
-                            
-
-                          
+                        style: TextStyle(fontSize: 15)),
                       ],
                     ),
                   ],
@@ -90,20 +81,11 @@ class ChatScreen extends StatelessWidget {
         children: [ 
           Expanded(
             child: Container(
-              padding:
-                  EdgeInsets.all(10), //wexpended wiget will took all the space
-              decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(25),
-                      topRight: Radius.circular(25))),
+              padding: EdgeInsets.all(10), //wexpended wiget will took all the space
+              decoration: BoxDecoration( color: Colors.white,
+                  borderRadius: BorderRadius.only(topLeft: Radius.circular(25),topRight: Radius.circular(25))),
               child: StreamBuilder(
-                stream: FirebaseFirestore.instance
-                    .collection('users')
-                    .doc(currentUser.uid)
-                    .collection('messages')
-                    .doc(friendId)
-                    .collection('chats')
+                stream: FirebaseFirestore.instance.collection('users').doc(currentUser.uid).collection('messages').doc(friendId).collection('chats')
                     .orderBy('date', descending: true)
                     .snapshots(),
                 builder: (context, AsyncSnapshot snapshot) {

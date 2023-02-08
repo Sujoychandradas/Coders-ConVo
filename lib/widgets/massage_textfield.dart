@@ -21,24 +21,42 @@ class _MassageTextFieldState extends State<MassageTextField> {
       child: Row(
         children: [
           Expanded(
-            child: TextField(
-              decoration: InputDecoration(
-                  enabledBorder: const OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.white),
+            child: Material(
+              borderRadius: BorderRadius.circular(50),
+              color: Colors.white,
+              elevation: 5,
+              child: Padding(
+                padding: const EdgeInsets.only(left: 8.0, top: 2, bottom: 2),
+                child: TextField(
+                  // decoration: InputDecoration(
+                  //     enabledBorder: const OutlineInputBorder(
+                  //       borderSide: BorderSide(color: Colors.white),
+                  //     ),
+                  //     focusedBorder: OutlineInputBorder(
+                  //       borderSide: BorderSide(color: Colors.grey.shade400),
+                  //     ),
+                  //     filled: true,
+                  //     fillColor: Colors.grey.shade200,
+                  //     hintText: 'Type Your Message',
+                  //     hintStyle: TextStyle(
+                  //         color: Colors.black45,
+                  //         fontSize: 16,
+                  //         fontWeight: FontWeight.w400,
+                  //         fontFamily: 'Roboto'),
+                  //         ),
+
+                  decoration: InputDecoration(border: InputBorder.none,contentPadding:
+                  EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
+                    hintText: 'Type your message here...',
+                    hintStyle: TextStyle(fontFamily: 'Poppins', fontSize: 14),
+
+                    // border: OutlineInputBorder(
+                    //     borderRadius: BorderRadius.circular(50)),
                   ),
-                  focusedBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.grey.shade400),
-                  ),
-                  filled: true,
-                  fillColor: Colors.grey.shade200,
-                  hintText: 'Type Your Message',
-                  hintStyle: TextStyle(
-                      color: Colors.black45,
-                      fontSize: 16,
-                      fontWeight: FontWeight.w400,
-                      fontFamily: 'Roboto')),
-              controller: _controller,
-              style: TextStyle(color: Colors.black),
+                  controller: _controller,
+                  style: TextStyle(color: Colors.black54),
+                ),
+              ),
             ),
 
             //     child: TextField(
@@ -105,9 +123,8 @@ class _MassageTextFieldState extends State<MassageTextField> {
               });
             },
             child: Container(
-              padding: EdgeInsets.all(8),
-              decoration:
-                  BoxDecoration(shape: BoxShape.circle, color: AppColor_Blue),
+              padding: EdgeInsets.all(10.0),
+              decoration: BoxDecoration(shape: BoxShape.circle, color: Colors.blue),
               child: Icon(
                 Icons.send,
                 color: Colors.white,

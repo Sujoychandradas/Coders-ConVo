@@ -82,9 +82,9 @@
       externalAnnotations="annotations.zip"
       proguardRules="proguard.txt"/>
   <library
-      name="io.flutter:flutter_embedding_release:1.0.0-8f2221fbef28b478debb78dd233f5250b220ca99@jar"
-      jars="C:\Users\Sujoy\.gradle\caches\modules-2\files-2.1\io.flutter\flutter_embedding_release\1.0.0-8f2221fbef28b478debb78dd233f5250b220ca99\f08f50d775a63bfaed1b525ae0f2294537b61713\flutter_embedding_release-1.0.0-8f2221fbef28b478debb78dd233f5250b220ca99.jar"
-      resolved="io.flutter:flutter_embedding_release:1.0.0-8f2221fbef28b478debb78dd233f5250b220ca99"/>
+      name="io.flutter:flutter_embedding_release:1.0.0-b24591ed328a2d4ce6505819e2f5898a78132f7f@jar"
+      jars="C:\Users\Sujoy\.gradle\caches\modules-2\files-2.1\io.flutter\flutter_embedding_release\1.0.0-b24591ed328a2d4ce6505819e2f5898a78132f7f\542f43a0dc6615f38186e2e4ae6d082021d9df4e\flutter_embedding_release-1.0.0-b24591ed328a2d4ce6505819e2f5898a78132f7f.jar"
+      resolved="io.flutter:flutter_embedding_release:1.0.0-b24591ed328a2d4ce6505819e2f5898a78132f7f"/>
   <library
       name="androidx.window:window-java:1.0.0-beta04@aar"
       jars="C:\Users\Sujoy\.gradle\caches\transforms-3\246793f755122fe14a5802655438cb75\transformed\jetified-window-java-1.0.0-beta04\jars\classes.jar"
@@ -128,17 +128,17 @@
       jars="C:\Users\Sujoy\.gradle\caches\modules-2\files-2.1\org.jetbrains.kotlin\kotlin-stdlib-jdk7\1.6.10\e1c380673654a089c4f0c9f83d0ddfdc1efdb498\kotlin-stdlib-jdk7-1.6.10.jar"
       resolved="org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.6.10"/>
   <library
-      name="io.flutter:armeabi_v7a_release:1.0.0-8f2221fbef28b478debb78dd233f5250b220ca99@jar"
-      jars="C:\Users\Sujoy\.gradle\caches\modules-2\files-2.1\io.flutter\armeabi_v7a_release\1.0.0-8f2221fbef28b478debb78dd233f5250b220ca99\122dadd89b184d69d6febfeab459b0c6a3463a80\armeabi_v7a_release-1.0.0-8f2221fbef28b478debb78dd233f5250b220ca99.jar"
-      resolved="io.flutter:armeabi_v7a_release:1.0.0-8f2221fbef28b478debb78dd233f5250b220ca99"/>
+      name="io.flutter:armeabi_v7a_release:1.0.0-b24591ed328a2d4ce6505819e2f5898a78132f7f@jar"
+      jars="C:\Users\Sujoy\.gradle\caches\modules-2\files-2.1\io.flutter\armeabi_v7a_release\1.0.0-b24591ed328a2d4ce6505819e2f5898a78132f7f\6bb6a7afb813cd2ae5ee9f908178089ef75c473c\armeabi_v7a_release-1.0.0-b24591ed328a2d4ce6505819e2f5898a78132f7f.jar"
+      resolved="io.flutter:armeabi_v7a_release:1.0.0-b24591ed328a2d4ce6505819e2f5898a78132f7f"/>
   <library
-      name="io.flutter:arm64_v8a_release:1.0.0-8f2221fbef28b478debb78dd233f5250b220ca99@jar"
-      jars="C:\Users\Sujoy\.gradle\caches\modules-2\files-2.1\io.flutter\arm64_v8a_release\1.0.0-8f2221fbef28b478debb78dd233f5250b220ca99\5ebb5d2bc5f016a1270c551ff368bf15f1734391\arm64_v8a_release-1.0.0-8f2221fbef28b478debb78dd233f5250b220ca99.jar"
-      resolved="io.flutter:arm64_v8a_release:1.0.0-8f2221fbef28b478debb78dd233f5250b220ca99"/>
+      name="io.flutter:arm64_v8a_release:1.0.0-b24591ed328a2d4ce6505819e2f5898a78132f7f@jar"
+      jars="C:\Users\Sujoy\.gradle\caches\modules-2\files-2.1\io.flutter\arm64_v8a_release\1.0.0-b24591ed328a2d4ce6505819e2f5898a78132f7f\8079e39d989e4e52e4cdc56082f3c0ac37212a11\arm64_v8a_release-1.0.0-b24591ed328a2d4ce6505819e2f5898a78132f7f.jar"
+      resolved="io.flutter:arm64_v8a_release:1.0.0-b24591ed328a2d4ce6505819e2f5898a78132f7f"/>
   <library
-      name="io.flutter:x86_64_release:1.0.0-8f2221fbef28b478debb78dd233f5250b220ca99@jar"
-      jars="C:\Users\Sujoy\.gradle\caches\modules-2\files-2.1\io.flutter\x86_64_release\1.0.0-8f2221fbef28b478debb78dd233f5250b220ca99\78df1a4384012b746ff89025431be961787544db\x86_64_release-1.0.0-8f2221fbef28b478debb78dd233f5250b220ca99.jar"
-      resolved="io.flutter:x86_64_release:1.0.0-8f2221fbef28b478debb78dd233f5250b220ca99"/>
+      name="io.flutter:x86_64_release:1.0.0-b24591ed328a2d4ce6505819e2f5898a78132f7f@jar"
+      jars="C:\Users\Sujoy\.gradle\caches\modules-2\files-2.1\io.flutter\x86_64_release\1.0.0-b24591ed328a2d4ce6505819e2f5898a78132f7f\308a4631433f9c1bfb2ecad1e2bacfe241408a4c\x86_64_release-1.0.0-b24591ed328a2d4ce6505819e2f5898a78132f7f.jar"
+      resolved="io.flutter:x86_64_release:1.0.0-b24591ed328a2d4ce6505819e2f5898a78132f7f"/>
   <library
       name="androidx.fragment:fragment:1.1.0@aar"
       jars="C:\Users\Sujoy\.gradle\caches\transforms-3\0e0e1a382b52c0572988a1c50e96d2f7\transformed\fragment-1.1.0\jars\classes.jar"
@@ -432,10 +432,10 @@
       externalAnnotations="annotations.zip"
       proguardRules="proguard.txt"/>
   <library
-      name="com.google.android.gms:play-services-auth:20.4.0@aar"
-      jars="C:\Users\Sujoy\.gradle\caches\transforms-3\3535be8f62b8f6744ac9d5afbd552ab5\transformed\jetified-play-services-auth-20.4.0\jars\classes.jar"
-      resolved="com.google.android.gms:play-services-auth:20.4.0"
-      folder="C:\Users\Sujoy\.gradle\caches\transforms-3\3535be8f62b8f6744ac9d5afbd552ab5\transformed\jetified-play-services-auth-20.4.0"
+      name="com.google.android.gms:play-services-auth:20.4.1@aar"
+      jars="C:\Users\Sujoy\.gradle\caches\transforms-3\1e28bb4d2dfdb26a699daa556422ff6d\transformed\jetified-play-services-auth-20.4.1\jars\classes.jar"
+      resolved="com.google.android.gms:play-services-auth:20.4.1"
+      folder="C:\Users\Sujoy\.gradle\caches\transforms-3\1e28bb4d2dfdb26a699daa556422ff6d\transformed\jetified-play-services-auth-20.4.1"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -471,10 +471,10 @@
       externalAnnotations="annotations.zip"
       proguardRules="proguard.txt"/>
   <library
-      name="com.google.android.gms:play-services-fido:19.0.0@aar"
-      jars="C:\Users\Sujoy\.gradle\caches\transforms-3\9c566292b4088baff7c6158b05d6f239\transformed\jetified-play-services-fido-19.0.0\jars\classes.jar"
-      resolved="com.google.android.gms:play-services-fido:19.0.0"
-      folder="C:\Users\Sujoy\.gradle\caches\transforms-3\9c566292b4088baff7c6158b05d6f239\transformed\jetified-play-services-fido-19.0.0"
+      name="com.google.android.gms:play-services-fido:19.0.1@aar"
+      jars="C:\Users\Sujoy\.gradle\caches\transforms-3\f8f9640b68f57571cf61c9b96af70c02\transformed\jetified-play-services-fido-19.0.1\jars\classes.jar"
+      resolved="com.google.android.gms:play-services-fido:19.0.1"
+      folder="C:\Users\Sujoy\.gradle\caches\transforms-3\f8f9640b68f57571cf61c9b96af70c02\transformed\jetified-play-services-fido-19.0.1"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
