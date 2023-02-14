@@ -52,7 +52,7 @@ class _SearchScreenState extends State<SearchScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Search your friends."),
+        title: Text("Search Coders"),
       ),
       body: Column(children: [
         Row(
@@ -61,12 +61,49 @@ class _SearchScreenState extends State<SearchScreen> {
               //takes all the space
               child: Padding(
                 padding: const EdgeInsets.all(15.0),
-                child: TextField(
-                  controller: searchController,
-                  decoration: InputDecoration(
-                      hintText: "Type username...",
-                      border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(10))),
+                // child: TextField(
+                //   controller: searchController,
+                //   decoration: InputDecoration(
+                //       hintText: "Type username...",
+                //       border: OutlineInputBorder(
+                //           borderRadius: BorderRadius.circular(10))),
+                // ),
+
+                child: Material(
+                  borderRadius: BorderRadius.circular(50),
+                  color: Colors.white,
+                  child: TextField(
+                    controller: searchController,
+                    // decoration: InputDecoration(
+                    //     enabledBorder: const OutlineInputBorder(
+                    //       borderSide: BorderSide(color: Colors.white),
+                    //     ),
+                    //     focusedBorder: OutlineInputBorder(
+                    //       borderSide: BorderSide(color: Colors.grey.shade400),
+                    //     ),
+                    //     filled: true,
+                    //     fillColor: Colors.grey.shade200,
+                    //     hintText: 'Type Your Message',
+                    //     hintStyle: TextStyle(
+                    //         color: Colors.black45,
+                    //         fontSize: 16,
+                    //         fontWeight: FontWeight.w400,
+                    //         fontFamily: 'Roboto'),
+                    //         ),
+
+                    decoration: InputDecoration(
+                      border: InputBorder.none,
+                      contentPadding: EdgeInsets.symmetric(
+                          vertical: 10.0, horizontal: 20.0),
+                      hintText: 'Type coder name here...',
+                      hintStyle: TextStyle(fontFamily: 'Poppins', fontSize: 14),
+
+                      // border: OutlineInputBorder(
+                      //     borderRadius: BorderRadius.circular(50)),
+                    ),
+
+                    style: TextStyle(color: Colors.black54),
+                  ),
                 ),
               ),
             ),

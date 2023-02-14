@@ -43,7 +43,6 @@ class _AuthScreenState extends State<AuthScreen> {
         "Image": userCredential.user!.photoURL,
         "uid": userCredential.user!.uid,
         "date": DateTime.now(),
-        
       });
     }
     Navigator.pushAndRemoveUntil(context,
@@ -58,21 +57,22 @@ class _AuthScreenState extends State<AuthScreen> {
         children: [
           Expanded(
             child: Container(
-              width: 150,
-              height: 150,
+              width: 300,
+              height: 300,
               decoration: BoxDecoration(
                 image: DecorationImage(
-                  image: NetworkImage(
-                    "https://cdn-icons-png.flaticon.com/512/134/134909.png",
+                  image: AssetImage(
+                    "assets/pictures/v1.png",
                   ),
+                  // image: Image.asset("assets/pictures/v1.png"),
                 ),
               ),
             ),
           ),
-          Text(
-            "Flutter Chat App",
-            style: TextStyle(fontSize: 36, fontWeight: FontWeight.bold),
-          ),
+          // Text(
+          //   "Flutter Chat App",
+          //   style: TextStyle(fontSize: 36, fontWeight: FontWeight.bold),
+          // ),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 20),
             child: ElevatedButton(
@@ -82,9 +82,9 @@ class _AuthScreenState extends State<AuthScreen> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Image.network(
-                    "https://developers.google.com/static/identity/images/g-logo.png",
-                    height: 36,
+                  Image.asset(
+                    "assets/pictures/google.png",
+                    height: 25,
                   ),
                   const SizedBox(
                     width: 10,
@@ -96,9 +96,11 @@ class _AuthScreenState extends State<AuthScreen> {
                 ],
               ),
               style: ButtonStyle(
-                  backgroundColor: MaterialStateProperty.all(Colors.black),
-                  padding: MaterialStateProperty.all(
-                      EdgeInsets.symmetric(vertical: 12))),
+                backgroundColor: MaterialStateProperty.all(Colors.blue),
+                padding: MaterialStateProperty.all(
+                  EdgeInsets.symmetric(vertical: 12),
+                ),
+              ),
             ),
           )
         ],

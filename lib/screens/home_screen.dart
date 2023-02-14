@@ -6,7 +6,16 @@ import 'package:coders_combo_chatapp/screens/chat_screen.dart';
 import 'package:coders_combo_chatapp/screens/search_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:google_sign_in/google_sign_in.dart';
+
+final _firestore = FirebaseFirestore.instance;
+// String username = 'User';
+// String email = 'user@example.com';
+// FirebaseUser loggedInUser;
+
+// class FirebaseUser {
+// }
 
 class HomeScreen extends StatefulWidget {
   UserModel user;
@@ -33,9 +42,31 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
         .update({'status': status});
   }
 
+  //   void getCurrentUser() async {
+  //   try {
+  //     final user = await _auth.currentUser();
+  //     if (user != null) {
+  //       loggedInUser = user;
+  //       setState(() {
+  //         username = loggedInUser.displayName;
+  //         email = loggedInUser.email;
+  //       });
+  //     }
+  //   } catch (e) {
+  //     EdgeAlert.show(context,
+  //         title: 'Something Went Wrong',
+  //         description: e.toString(),
+  //         gravity: EdgeAlert.BOTTOM,
+  //         icon: Icons.error,
+  //         backgroundColor: Colors.deepPurple[900]);
+  //   }
+  // }
+
   @override
   void didChangeAppLifecycleState(AppLifecycleState state) {
-    if (state == AppLifecycleState.resumed) //resumed means background theke abar open hoile online dekaibo
+    if (state ==
+        AppLifecycleState
+            .resumed) //resumed means background theke abar open hoile online dekaibo
     {
       setStatus(
         'online',
@@ -50,20 +81,61 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("HOME"),
+        title: const Text("Chats"),
         centerTitle: true,
-        backgroundColor: Colors.teal,
+        backgroundColor: const Color.fromARGB(255, 89, 180, 255),
+
         actions: [
-          IconButton(
-              onPressed: () async {
-                await GoogleSignIn()
-                    .signOut(); //without it we can't use diffrent account all the time i have to use same account
-                await FirebaseAuth.instance.signOut();
-                Navigator.pushAndRemoveUntil(context,MaterialPageRoute(builder: (context) => AuthScreen()),(route) => false);
-              },
-              icon: Icon(Icons.logout))
+          PopupMenuButton(
+            itemBuilder: (context) => [
+              PopupMenuItem<int>(
+                //int disi karon user jokon item re press korbe int value pass hobe
+                value: 0,
+                child: Text("Logout"),
+              ),
+            ],
+            onSelected: (value) async {
+              await GoogleSignIn()
+                  .signOut(); //without it we can't use diffrent account all the time i have to use same account
+              await FirebaseAuth.instance.signOut();
+              Navigator.pushAndRemoveUntil(
+                  context,
+                  MaterialPageRoute(builder: (context) => const AuthScreen()),
+                  (route) => false);
+            },
+            // onOpened: () async {
+            // await GoogleSignIn()
+            //     .signOut(); //without it we can't use diffrent account all the time i have to use same account
+            // await FirebaseAuth.instance.signOut();
+            // Navigator.pushAndRemoveUntil(
+            //     context,
+            //     MaterialPageRoute(builder: (context) => const AuthScreen()),
+            //     (route) => false);
+            // },
+          ),
         ],
+
+        // actions: [
+        //   IconButton(
+        // onPressed: () async {
+        //   await GoogleSignIn()
+        //       .signOut(); //without it we can't use diffrent account all the time i have to use same account
+        //   await FirebaseAuth.instance.signOut();
+        //   Navigator.pushAndRemoveUntil(
+        //       context,
+        //       MaterialPageRoute(builder: (context) => const AuthScreen()),
+        //       (route) => false);
+        // },
+        //       icon: const Icon(Icons.logout))
+        // ],
       ),
+      //app drawer
+      // drawer: Drawer(
+      //   child: ListView(children: <Widget>[
+      //     UserAccountsDrawerHeader(
+      //         accountName: username, accountEmail: accountEmail)
+      //   ]),
+      // ),
       body: StreamBuilder(
         stream: FirebaseFirestore.instance
             .collection('users')
@@ -74,7 +146,9 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
           if (snapshot.hasData) {
             if (snapshot.data.docs.length < 1) //null
             {
-              return Center(child: Text("No Chats Available"),);
+              return const Center(
+                child: Text("No Chats Available"),
+              );
             }
             return ListView.builder(
                 itemCount: snapshot.data.docs.length,
@@ -90,51 +164,74 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
                       builder: (context, AsyncSnapshot asyncSnapshot) {
                         if (asyncSnapshot.hasData) {
                           var friend = asyncSnapshot.data;
-                          return ListTile(
-                            leading: ClipRect(
-                              // child: Image.network(friend['Image']),
-                              child: CachedNetworkImage(
-                                imageUrl: (friend['Image']),
-                                placeholder: ((context, url) =>
-                                    CircularProgressIndicator()),
-                                errorWidget: ((context, url, error) =>
-                                    Icon(Icons.error)),
-                                height: 50,
-                              ),
+                          return Material(
+                            color: Colors.white,
+                            child: Column(
+                              children: [
+                                ListTile(
+                                  leading: ClipRRect(
+                                    borderRadius: BorderRadius.circular(300.0),
+
+                                    // child: Image.network(friend['Image']),
+                                    child: CachedNetworkImage(
+                                      imageUrl: (friend['Image']),
+                                      placeholder: ((context, url) =>
+                                          const CircularProgressIndicator()),
+                                      errorWidget: ((context, url, error) =>
+                                          const Icon(Icons.error)),
+                                      height: 50,
+                                    ),
+                                  ),
+                                  title: Text(friend['name']),
+                                  subtitle: Container(
+                                    child: Text(
+                                      "$lastMsg",
+                                      style: const TextStyle(
+                                          color: Color.fromARGB(
+                                              255, 160, 160, 160)),
+                                      overflow: TextOverflow.ellipsis,
+                                    ),
+                                    // decoration: BoxDecoration(
+                                    //   border: Border(
+                                    //     bottom: BorderSide(color: Colors.black),
+                                    //   ),
+                                    // ),
+                                  ),
+                                  onTap: () {
+                                    Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) => ChatScreen(
+                                                currentUser: widget.user,
+                                                friendId: friend['uid'],
+                                                friendName: friend['name'],
+                                                friendImage: friend['Image'])));
+                                  },
+                                ),
+                                Material(
+                                  child: Divider(
+                                      // color: Colors.white70,
+                                      // thickness: 1,
+                                      // indent: 5,
+                                      // endIndent: 10,
+                                      ),
+                                ),
+                              ],
                             ),
-                            title: Text(friend['name']),
-                            subtitle: Container(
-                              child: Text(
-                                "$lastMsg",
-                                style: TextStyle(
-                                    color: Color.fromARGB(255, 160, 160, 160)),
-                                overflow: TextOverflow.ellipsis,
-                              ),
-                            ),
-                            onTap: () {
-                              Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) => ChatScreen(
-                                          currentUser: widget.user,
-                                          friendId: friend['uid'],
-                                          friendName: friend['name'],
-                                          friendImage: friend['Image'])));
-                            },
                           );
                         }
-                        return LinearProgressIndicator();
+                        return const LinearProgressIndicator();
                       });
-                  return ListTile();
+                  // return ListTile();
                 }));
           }
-          return Center(
+          return const Center(
             child: CircularProgressIndicator(),
           );
         },
       ),
       floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.search),
+        child: const Icon(Icons.search),
         onPressed: () {
           Navigator.push(
               context,

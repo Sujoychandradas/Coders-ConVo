@@ -16,7 +16,7 @@ class ChatScreen extends StatelessWidget {
   final String friendName;
   final String friendImage;
 
-  ChatScreen(
+  const ChatScreen(
       {
           required this.currentUser,
           required this.friendId,
@@ -83,7 +83,7 @@ class ChatScreen extends StatelessWidget {
             child: Container(
               padding: EdgeInsets.all(10), //wexpended wiget will took all the space
               decoration: BoxDecoration( color: Colors.white,
-                  borderRadius: BorderRadius.only(topLeft: Radius.circular(25),topRight: Radius.circular(25))),
+              borderRadius: BorderRadius.only(topLeft: Radius.circular(25),topRight: Radius.circular(25))),
               child: StreamBuilder(
                 stream: FirebaseFirestore.instance.collection('users').doc(currentUser.uid).collection('messages').doc(friendId).collection('chats')
                     .orderBy('date', descending: true)
