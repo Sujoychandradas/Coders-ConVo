@@ -14,13 +14,13 @@ class UserModel {
     required this.data,
     required this.uid,
   });
-//So we have our model ready  but as we also know that there are fuctions to serailse and deserialse our json data usally thsi call dot form json and all
+// fuctions to serailse and deserialse our json data usally thsi call dot form json
 
   factory UserModel.fromJson(DocumentSnapshot snapshot) {
     //Doc snapshot are firebase data
     return UserModel(
-      email: snapshot['email'] ,
-      name: snapshot['name']  ,
+      email: snapshot['email'],
+      name: snapshot['name'],
       Image: snapshot['Image'],
       data: snapshot['date'],
       uid: snapshot['uid'],

@@ -53,6 +53,7 @@ MERGED from [:firebase_auth] E:\Flutter\coders_combo_chatapp\build\firebase_auth
 MERGED from [:cloud_firestore] E:\Flutter\coders_combo_chatapp\build\cloud_firestore\intermediates\merged_manifest\release\AndroidManifest.xml:2:1-17:12
 MERGED from [:firebase_core] E:\Flutter\coders_combo_chatapp\build\firebase_core\intermediates\merged_manifest\release\AndroidManifest.xml:2:1-17:12
 MERGED from [:sqflite] E:\Flutter\coders_combo_chatapp\build\sqflite\intermediates\merged_manifest\release\AndroidManifest.xml:2:1-9:12
+MERGED from [:fluttertoast] E:\Flutter\coders_combo_chatapp\build\fluttertoast\intermediates\merged_manifest\release\AndroidManifest.xml:2:1-9:12
 MERGED from [:path_provider_android] E:\Flutter\coders_combo_chatapp\build\path_provider_android\intermediates\merged_manifest\release\AndroidManifest.xml:2:1-9:12
 MERGED from [:google_sign_in_android] E:\Flutter\coders_combo_chatapp\build\google_sign_in_android\intermediates\merged_manifest\release\AndroidManifest.xml:2:1-11:12
 MERGED from [androidx.window:window-java:1.0.0-beta04] C:\Users\Sujoy\.gradle\caches\transforms-3\246793f755122fe14a5802655438cb75\transformed\jetified-window-java-1.0.0-beta04\AndroidManifest.xml:17:1-23:12
@@ -121,6 +122,8 @@ MERGED from [:firebase_core] E:\Flutter\coders_combo_chatapp\build\firebase_core
 MERGED from [:firebase_core] E:\Flutter\coders_combo_chatapp\build\firebase_core\intermediates\merged_manifest\release\AndroidManifest.xml:5:5-7:41
 MERGED from [:sqflite] E:\Flutter\coders_combo_chatapp\build\sqflite\intermediates\merged_manifest\release\AndroidManifest.xml:5:5-7:41
 MERGED from [:sqflite] E:\Flutter\coders_combo_chatapp\build\sqflite\intermediates\merged_manifest\release\AndroidManifest.xml:5:5-7:41
+MERGED from [:fluttertoast] E:\Flutter\coders_combo_chatapp\build\fluttertoast\intermediates\merged_manifest\release\AndroidManifest.xml:5:5-7:41
+MERGED from [:fluttertoast] E:\Flutter\coders_combo_chatapp\build\fluttertoast\intermediates\merged_manifest\release\AndroidManifest.xml:5:5-7:41
 MERGED from [:path_provider_android] E:\Flutter\coders_combo_chatapp\build\path_provider_android\intermediates\merged_manifest\release\AndroidManifest.xml:5:5-7:41
 MERGED from [:path_provider_android] E:\Flutter\coders_combo_chatapp\build\path_provider_android\intermediates\merged_manifest\release\AndroidManifest.xml:5:5-7:41
 MERGED from [:google_sign_in_android] E:\Flutter\coders_combo_chatapp\build\google_sign_in_android\intermediates\merged_manifest\release\AndroidManifest.xml:5:5-7:41

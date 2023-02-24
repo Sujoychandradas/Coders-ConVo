@@ -56,6 +56,19 @@
       externalAnnotations="annotations.zip"
       proguardRules="proguard.txt"/>
   <library
+      name="E:\Flutter\coders_combo_chatapp\android@@:fluttertoast::release"
+      jars="E:\Flutter\coders_combo_chatapp\build\fluttertoast\.transforms\3fec72551dea7d3ecb7c41b503f62a9d\transformed\out\jars\classes.jar"
+      resolved="com.example.FlutterToast:fluttertoast:unspecified"
+      folder="E:\Flutter\coders_combo_chatapp\build\fluttertoast\.transforms\3fec72551dea7d3ecb7c41b503f62a9d\transformed\out"
+      manifest="AndroidManifest.xml"
+      resFolder="res"
+      assetsFolder="assets"
+      lintJar="lint.jar"
+      publicResources="public.txt"
+      symbolFile="R.txt"
+      externalAnnotations="annotations.zip"
+      proguardRules="proguard.txt"/>
+  <library
       name="E:\Flutter\coders_combo_chatapp\android@@:path_provider_android::release"
       jars="E:\Flutter\coders_combo_chatapp\build\path_provider_android\.transforms\4a15dec2dae71d3d334f9f095ef4bfde\transformed\out\jars\classes.jar"
       resolved="io.flutter.plugins.pathprovider:path_provider_android:unspecified"

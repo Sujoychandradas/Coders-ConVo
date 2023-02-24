@@ -1,15 +1,13 @@
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:coders_combo_chatapp/constanst/Constants.dart';
 import 'package:coders_combo_chatapp/model/user_model.dart';
 import 'package:coders_combo_chatapp/screens/auth_screen.dart';
 import 'package:coders_combo_chatapp/screens/chat_screen.dart';
 import 'package:coders_combo_chatapp/screens/search_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
-final _firestore = FirebaseFirestore.instance;
 // String username = 'User';
 // String email = 'user@example.com';
 // FirebaseUser loggedInUser;
@@ -30,16 +28,12 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
   void initState() {
     // TODO: implement initState
     super.initState();
-    WidgetsBinding.instance
-        .addObserver(this); //To intilize widget binding observer
+    WidgetsBinding.instance.addObserver(this); //To intilize widget binding observer
     setStatus("online");
   }
 
   void setStatus(String status) async {
-    await FirebaseFirestore.instance
-        .collection('users')
-        .doc(widget.user.uid)
-        .update({'status': status});
+    await usersRef.doc(widget.user.uid).update({'status': status});
   }
 
   //   void getCurrentUser() async {
@@ -64,9 +58,7 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
 
   @override
   void didChangeAppLifecycleState(AppLifecycleState state) {
-    if (state ==
-        AppLifecycleState
-            .resumed) //resumed means background theke abar open hoile online dekaibo
+    if (state == AppLifecycleState.resumed) //resumed means background theke abar open hoile online dekaibo
     {
       setStatus(
         'online',
@@ -99,9 +91,7 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
                   .signOut(); //without it we can't use diffrent account all the time i have to use same account
               await FirebaseAuth.instance.signOut();
               Navigator.pushAndRemoveUntil(
-                  context,
-                  MaterialPageRoute(builder: (context) => const AuthScreen()),
-                  (route) => false);
+                  context, MaterialPageRoute(builder: (context) => const AuthScreen()), (route) => false);
             },
             // onOpened: () async {
             // await GoogleSignIn()
@@ -137,11 +127,7 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
       //   ]),
       // ),
       body: StreamBuilder(
-        stream: FirebaseFirestore.instance
-            .collection('users')
-            .doc(widget.user.uid)
-            .collection('messages')
-            .snapshots(),
+        stream: usersRef.doc(widget.user.uid).collection('messages').snapshots(),
         builder: (context, AsyncSnapshot snapshot) {
           if (snapshot.hasData) {
             if (snapshot.data.docs.length < 1) //null
@@ -157,10 +143,7 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
                   var lastMsg = snapshot.data.docs[index]['last_msg'];
 
                   return FutureBuilder(
-                      future: FirebaseFirestore.instance
-                          .collection('users')
-                          .doc(friendId)
-                          .get(),
+                      future: usersRef.doc(friendId).get(),
                       builder: (context, AsyncSnapshot asyncSnapshot) {
                         if (asyncSnapshot.hasData) {
                           var friend = asyncSnapshot.data;
@@ -175,10 +158,8 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
                                     // child: Image.network(friend['Image']),
                                     child: CachedNetworkImage(
                                       imageUrl: (friend['Image']),
-                                      placeholder: ((context, url) =>
-                                          const CircularProgressIndicator()),
-                                      errorWidget: ((context, url, error) =>
-                                          const Icon(Icons.error)),
+                                      placeholder: ((context, url) => const CircularProgressIndicator()),
+                                      errorWidget: ((context, url, error) => const Icon(Icons.error)),
                                       height: 50,
                                     ),
                                   ),
@@ -186,9 +167,7 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
                                   subtitle: Container(
                                     child: Text(
                                       "$lastMsg",
-                                      style: const TextStyle(
-                                          color: Color.fromARGB(
-                                              255, 160, 160, 160)),
+                                      style: const TextStyle(color: Color.fromARGB(255, 160, 160, 160)),
                                       overflow: TextOverflow.ellipsis,
                                     ),
                                     // decoration: BoxDecoration(
@@ -207,14 +186,30 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
                                                 friendName: friend['name'],
                                                 friendImage: friend['Image'])));
                                   },
+
+                                  // onLongPress: () {
+
+                                  // },
+
+                                  // onLongPress: () => Container(
+                                  //   margin: EdgeInsets.symmetric(vertical: 10),
+                                  //   height: 100,
+                                  //   width: 100,
+                                  //   child: PopupMenuButton(
+                                  //     itemBuilder: (context) {
+                                  //       return <PopupMenuItem>[
+                                  //         new PopupMenuItem(
+                                  //             child: Text('Delete')
+                                  //             ,onTap: () {
+
+                                  //             },)
+                                  //       ];
+                                  //     },
+                                  //   ),
+                                  // ),
                                 ),
                                 Material(
-                                  child: Divider(
-                                      // color: Colors.white70,
-                                      // thickness: 1,
-                                      // indent: 5,
-                                      // endIndent: 10,
-                                      ),
+                                  child: Divider(),
                                 ),
                               ],
                             ),
@@ -233,10 +228,7 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
       floatingActionButton: FloatingActionButton(
         child: const Icon(Icons.search),
         onPressed: () {
-          Navigator.push(
-              context,
-              MaterialPageRoute(
-                  builder: (context) => SearchScreen(widget.user)));
+          Navigator.push(context, MaterialPageRoute(builder: (context) => SearchScreen(widget.user)));
         },
       ),
     );

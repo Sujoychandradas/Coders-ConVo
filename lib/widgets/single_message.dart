@@ -39,8 +39,7 @@ class SingleMessage extends StatelessWidget {
         Padding(
       padding: const EdgeInsets.all(9.0),
       child: Column(
-        crossAxisAlignment:
-            isMe ? CrossAxisAlignment.end : CrossAxisAlignment.start,
+        crossAxisAlignment: isMe ? CrossAxisAlignment.end : CrossAxisAlignment.start,
         children: <Widget>[
           Container(
             padding: EdgeInsets.symmetric(horizontal: 10),

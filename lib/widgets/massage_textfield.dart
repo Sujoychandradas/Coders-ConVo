@@ -45,8 +45,8 @@ class _MassageTextFieldState extends State<MassageTextField> {
                   //         fontFamily: 'Roboto'),
                   //         ),
 
-                  decoration: InputDecoration(border: InputBorder.none,contentPadding:
-                  EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
+                  decoration: InputDecoration(
+                    border: InputBorder.none, contentPadding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
                     hintText: 'Type your message here...',
                     hintStyle: TextStyle(fontFamily: 'Poppins', fontSize: 14),
 

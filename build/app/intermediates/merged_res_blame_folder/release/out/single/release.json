@@ -88,6 +88,10 @@
         "source": "C:\\Users\\Sujoy\\.gradle\\caches\\transforms-3\\3ff720be07735976176520d1c05fb799\\transformed\\jetified-play-services-base-18.0.1\\res\\drawable\\common_google_signin_btn_text_light_normal.xml"
     },
     {
+        "merged": "E:\\Flutter\\coders_combo_chatapp\\build\\app\\intermediates\\merged_res\\release\\drawable_corner.xml.flat",
+        "source": "E:\\Flutter\\coders_combo_chatapp\\build\\fluttertoast\\intermediates\\packaged_res\\release\\drawable\\corner.xml"
+    },
+    {
         "merged": "E:\\Flutter\\coders_combo_chatapp\\build\\app\\intermediates\\merged_res\\release\\drawable-xhdpi-v4_common_google_signin_btn_text_light_normal_background.9.png.flat",
         "source": "C:\\Users\\Sujoy\\.gradle\\caches\\transforms-3\\3ff720be07735976176520d1c05fb799\\transformed\\jetified-play-services-base-18.0.1\\res\\drawable-xhdpi-v4\\common_google_signin_btn_text_light_normal_background.9.png"
     },
@@ -126,6 +130,10 @@
     {
         "merged": "E:\\Flutter\\coders_combo_chatapp\\build\\app\\intermediates\\merged_res\\release\\drawable-xxhdpi-v4_common_google_signin_btn_icon_light_normal_background.9.png.flat",
         "source": "C:\\Users\\Sujoy\\.gradle\\caches\\transforms-3\\3ff720be07735976176520d1c05fb799\\transformed\\jetified-play-services-base-18.0.1\\res\\drawable-xxhdpi-v4\\common_google_signin_btn_icon_light_normal_background.9.png"
+    },
+    {
+        "merged": "E:\\Flutter\\coders_combo_chatapp\\build\\app\\intermediates\\merged_res\\release\\layout_toast_custom.xml.flat",
+        "source": "E:\\Flutter\\coders_combo_chatapp\\build\\fluttertoast\\intermediates\\packaged_res\\release\\layout\\toast_custom.xml"
     },
     {
         "merged": "E:\\Flutter\\coders_combo_chatapp\\build\\app\\intermediates\\merged_res\\release\\drawable_notification_bg_low.xml.flat",
@@ -278,6 +286,10 @@
     {
         "merged": "E:\\Flutter\\coders_combo_chatapp\\build\\app\\intermediates\\merged_res\\release\\drawable_common_google_signin_btn_text_dark_focused.xml.flat",
         "source": "C:\\Users\\Sujoy\\.gradle\\caches\\transforms-3\\3ff720be07735976176520d1c05fb799\\transformed\\jetified-play-services-base-18.0.1\\res\\drawable\\common_google_signin_btn_text_dark_focused.xml"
+    },
+    {
+        "merged": "E:\\Flutter\\coders_combo_chatapp\\build\\app\\intermediates\\merged_res\\release\\drawable_toast_bg.xml.flat",
+        "source": "E:\\Flutter\\coders_combo_chatapp\\build\\fluttertoast\\intermediates\\packaged_res\\release\\drawable\\toast_bg.xml"
     },
     {
         "merged": "E:\\Flutter\\coders_combo_chatapp\\build\\app\\intermediates\\merged_res\\release\\drawable_common_google_signin_btn_icon_dark_normal.xml.flat",

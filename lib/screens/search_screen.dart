@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:coders_combo_chatapp/constanst/Constants.dart';
 import 'package:coders_combo_chatapp/model/user_model.dart';
 import 'package:coders_combo_chatapp/screens/chat_screen.dart';
 import 'package:flutter/material.dart';
@@ -12,20 +13,48 @@ class SearchScreen extends StatefulWidget {
 
 class _SearchScreenState extends State<SearchScreen> {
   TextEditingController searchController = TextEditingController();
+  Future<QuerySnapshot>? _users;
   List<Map> searchResult =
-      []; //firbase data ar coming json or map formate// there are three user there will be three maps
+      []; //firbase data ar coming json or map formate//if  there are three user there will be three maps
   bool isloading = false;
+
+  // void onSearch() async {
+  //   setState(() {
+  //     searchResult = [];
+  //     isloading = true;
+  //   });
+  //   await usersRef
+  //       .where("name", isEqualTo: searchController.text)
+  //       .get()
+  //       .then((value) {
+  //     if (value.docs.length < 1) {
+  //       ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+  //         content: Text("No User Found"),
+  //       ));
+  //       setState(() {
+  //         isloading = false;
+  //       });
+
+  //       return; //there is no user available return
+  //     }
+  //     value.docs.forEach((user) {
+  //       if (user.data()['email'] != widget.user.email) {
+  //         //it is for ignoring the real user to not search himself
+  //         searchResult.add(user.data());
+  //       }
+  //     });
+  //     setState(() {
+  //       isloading = false;
+  //     });
+  //   });
+  // }
 
   void onSearch() async {
     setState(() {
       searchResult = [];
       isloading = true;
     });
-    await FirebaseFirestore.instance
-        .collection('users')
-        .where("name", isEqualTo: searchController.text)
-        .get()
-        .then((value) {
+    await usersRef.where("name", isEqualTo: searchController.text).get().then((value) {
       if (value.docs.length < 1) {
         ScaffoldMessenger.of(context).showSnackBar(SnackBar(
           content: Text("No User Found"),
@@ -93,8 +122,7 @@ class _SearchScreenState extends State<SearchScreen> {
 
                     decoration: InputDecoration(
                       border: InputBorder.none,
-                      contentPadding: EdgeInsets.symmetric(
-                          vertical: 10.0, horizontal: 20.0),
+                      contentPadding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
                       hintText: 'Type coder name here...',
                       hintStyle: TextStyle(fontFamily: 'Poppins', fontSize: 14),
 
